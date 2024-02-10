@@ -47,7 +47,11 @@
 }
 
 .container #box2:hover {
-    box-shadow: 13px 13px 10px #bcd651;
+    box-shadow: 13px 13px 10px #dddddd;
+}
+
+.container #box3:hover {
+    box-shadow: 13px 13px 10px #307fff;
 }
 
 .container .box span {
