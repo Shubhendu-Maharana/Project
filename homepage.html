@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="homepage.css">
+    <title>A.I. Tools</title>
+</head>
+
+<body>
+
+    <video autoplay muted loop id="bg-video">
+        <source src="images/bg.mp4" type="video/mp4">
+    </video>
+
+    <div class="greeting-box">
+        <div class="greeting">
+            <h1>Hello</h1>
+            <h3 id="greeting-text"></h3>
+        </div>
+
+        <div id="clock" class="light">
+            <div class="display">
+                <div class="weekdays"></div>
+                <div class="ampm"></div>
+                <div class="alarm"></div>
+                <div class="digits"></div>
+            </div>
+        </div>
+
+        <div class="weather">
+            <div id="currentWeather"></div>
+        </div>
+
+        <div class="quote">
+            <h3>Today's quote: </h3>
+            <p id="quote"></p>
+            <i id="author"></i>
+        </div>
+    </div>
+
+    <div class="container">
+        <a class="box" href="chatgpt/chat.html">
+            <div class="image">
+                <img src="images/chatbot.jpg" alt="">
+            </div>
+            <span>ChatGPT</span>
+        </a>
+        <a class="box" id="box2" href="image-gallery/image-search.html" style="font-family: cursive;">
+            <div class="image">
+                <img src="images/image.jpg" alt="">
+            </div>
+            <span>Image Gallery</span>
+        </a>
+        <a class="box" id="box3" href="translator/translate.html">
+            <div class="image">
+                <img src="images/translate.png" alt="">
+            </div>
+            <span>Translator</span>
+        </a>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.0.0/moment.min.js"></script>
+    <script src="script.js"></script>
+    <script src="clock.js"></script>
+</body>
+
+</html>
