@@ -73,14 +73,13 @@ fetch("quotes.json")
 const city = "Berhampur";
 const WEATHER_API_KEY = "12ff0dc2354044f397f112153241801";
 const WEATHER_API_URL = `http://api.weatherapi.com/v1/forecast.json?key=${WEATHER_API_KEY}&q=${city}&days=5&aqi=no`;
-const currentWeather = document.getElementById("currentWeather");
+const weather = document.getElementById("weather");
 
 fetch(WEATHER_API_URL)
     .then(res => res.json())
     .then(data => {
-        currentWeather.innerHTML = `
+        weather.innerHTML = `
         <div class="info">
-            <h3>Today</h3>
             <h3>${data.current.condition.text}</h3>
             <h3>Temp: ${data.current.temp_c}</h3>
         </div>

@@ -74,7 +74,11 @@
     position: relative;
     z-index: 2;
     height: 200px;
-    background-color: rgba(255, 255, 255, 0.8);
+    background: linear-gradient(#307fff, #ddd, #119b84);
+    color: black;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    backdrop-filter: blur(10px);
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -90,14 +94,13 @@
     border-radius: 12px;
 }
 
-.greeting-box .weather #currentWeather {
-    margin-left: 10px;
+.greeting-box #weather {
     font-size: 1.5rem;
     display: flex;
 }
 
-.greeting-box .weather img {
-    height: 100%;
+.greeting-box #weather img {
+    width: 100%;
 }
 
 .greeting-box .quote {
@@ -121,7 +124,7 @@
 }
 
 
-.greeting-box #clock {
+/* .greeting-box #clock {
     font: 15px/1.3 Arial, sans-serif;
     color: #4f4f4f;
 }
@@ -151,12 +154,6 @@
     position: relative;
 }
 
-
-/*-------------------------
-	Light color theme
---------------------------*/
-
-
 #clock.light {
     background-color: #f3f3f3;
     color: #272e38;
@@ -181,12 +178,6 @@
     background-color: #dddddd;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08) inset, 0 1px 1px #fafafa;
 }
-
-
-/*-------------------------
-	The Digits
---------------------------*/
-
 
 #clock .digits div {
     text-align: left;
@@ -349,14 +340,10 @@
 }
 
 
-/* 1 */
-
 #clock .digits div.one .d5,
 #clock .digits div.one .d7 {
     opacity: 1;
 }
-
-/* 2 */
 
 #clock .digits div.two .d1,
 #clock .digits div.two .d5,
@@ -366,8 +353,6 @@
     opacity: 1;
 }
 
-/* 3 */
-
 #clock .digits div.three .d1,
 #clock .digits div.three .d5,
 #clock .digits div.three .d2,
@@ -376,16 +361,12 @@
     opacity: 1;
 }
 
-/* 4 */
-
 #clock .digits div.four .d5,
 #clock .digits div.four .d2,
 #clock .digits div.four .d4,
 #clock .digits div.four .d7 {
     opacity: 1;
 }
-
-/* 5 */
 
 #clock .digits div.five .d1,
 #clock .digits div.five .d2,
@@ -394,8 +375,6 @@
 #clock .digits div.five .d7 {
     opacity: 1;
 }
-
-/* 6 */
 
 #clock .digits div.six .d1,
 #clock .digits div.six .d2,
@@ -407,15 +386,11 @@
 }
 
 
-/* 7 */
-
 #clock .digits div.seven .d1,
 #clock .digits div.seven .d5,
 #clock .digits div.seven .d7 {
     opacity: 1;
 }
-
-/* 8 */
 
 #clock .digits div.eight .d1,
 #clock .digits div.eight .d2,
@@ -427,8 +402,6 @@
     opacity: 1;
 }
 
-/* 9 */
-
 #clock .digits div.nine .d1,
 #clock .digits div.nine .d2,
 #clock .digits div.nine .d3,
@@ -438,8 +411,6 @@
     opacity: 1;
 }
 
-/* 0 */
-
 #clock .digits div.zero .d1,
 #clock .digits div.zero .d3,
 #clock .digits div.zero .d4,
@@ -448,9 +419,6 @@
 #clock .digits div.zero .d7 {
     opacity: 1;
 }
-
-
-/* The dots */
 
 #clock .digits div.dots {
     width: 5px;
@@ -470,13 +438,6 @@
     top: 34px;
 }
 
-
-
-/*-------------------------
-	Weekdays
---------------------------*/
-
-
 #clock .weekdays {
     font-size: 12px;
     position: absolute;
@@ -485,7 +446,6 @@
     left: 0;
     text-align: center;
 }
-
 
 #clock .weekdays span {
     opacity: 0.2;
@@ -496,15 +456,9 @@
     opacity: 1;
 }
 
-
-/*-------------------------
-		AM/PM
---------------------------*/
-
-
 #clock .ampm {
     position: absolute;
     bottom: 20px;
     right: 20px;
     font-size: 12px;
-}
+} */
