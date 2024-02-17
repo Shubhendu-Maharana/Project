@@ -6,9 +6,9 @@ icons = document.querySelectorAll(".row i");
 translateBtn = document.querySelector("button"),
 
 selectTag.forEach((tag, id) => {
-    for (let country_code in api1_countries) {
+    for (let country_code in api2_countries) {
         let selected = id == 0 ? country_code == "en" ? "selected" : "" : country_code == "hi" ? "selected" : "";
-        let option = `<option ${selected} value="${country_code}">${api1_countries[country_code]}</option>`;
+        let option = `<option ${selected} value="${country_code}">${api2_countries[country_code]}</option>`;
         tag.insertAdjacentHTML("beforeend", option);
     }
 });
@@ -30,38 +30,38 @@ fromText.addEventListener("keyup", () => {
 
 
 // Using API-1
-translateBtn.addEventListener("click", () => {
-    let text = fromText.value.trim(),
-    translateFrom = selectTag[0].value,
-    translateTo = selectTag[1].value;
-    if(!text) return;
-    toText.setAttribute("placeholder", `Translating to ${api1_countries[translateTo]}...`);
-    let apiUrl = `https://api.mymemory.translated.net/get?q=${text}&langpair=${translateFrom}|${translateTo}`;
-    fetch(apiUrl).then(res => res.json()).then(data => {
-        toText.value = data.responseData.translatedText;
-        data.matches.forEach(data => {
-            if(data.id === 0) {
-                toText.value = data.translation;
-            }
-        });
-        toText.setAttribute("placeholder", "Translation");
-    });
-});
-
-
-// Using API-2
 // translateBtn.addEventListener("click", () => {
 //     let text = fromText.value.trim(),
 //     translateFrom = selectTag[0].value,
 //     translateTo = selectTag[1].value;
 //     if(!text) return;
-//     toText.setAttribute("placeholder", `Translating to ${api2_countries[translateTo]}...`);
-//     let apiUrl = `https://655.mtis.workers.dev/translate?text=${text}!&source_lang=${translateFrom}&target_lang=${translateTo}`;
+//     toText.setAttribute("placeholder", `Translating to ${api1_countries[translateTo]}...`);
+//     let apiUrl = `https://api.mymemory.translated.net/get?q=${text}&langpair=${translateFrom}|${translateTo}`;
 //     fetch(apiUrl).then(res => res.json()).then(data => {
-//         toText.value = data.response.translated_text;
+//         toText.value = data.responseData.translatedText;
+//         data.matches.forEach(data => {
+//             if(data.id === 0) {
+//                 toText.value = data.translation;
+//             }
+//         });
 //         toText.setAttribute("placeholder", "Translation");
 //     });
 // });
+
+
+// Using API-2
+translateBtn.addEventListener("click", () => {
+    let text = fromText.value.trim(),
+    translateFrom = selectTag[0].value,
+    translateTo = selectTag[1].value;
+    if(!text) return;
+    toText.setAttribute("placeholder", `Translating to ${api2_countries[translateTo]}...`);
+    let apiUrl = `https://655.mtis.workers.dev/translate?text=${text}!&source_lang=${translateFrom}&target_lang=${translateTo}`;
+    fetch(apiUrl).then(res => res.json()).then(data => {
+        toText.value = data.response.translated_text;
+        toText.setAttribute("placeholder", "Translation");
+    });
+});
 
 icons.forEach(icon => {
     icon.addEventListener("click", ({target}) => {
